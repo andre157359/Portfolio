@@ -1,0 +1,540 @@
+html, body
+  font-family: 'Montserrat', sans-serif
+  font-size: 16px
+  width: 100%
+  height: 100%
+  background: #242331
+  margin: 0
+  padding: 0
+
+@import 'block'
+@import 'button'
+@import 'skillbar'
+@import 'media'
+@import 'thank_you'
+@import 'work'
+
+#section0
+  display: table
+  width: 100%
+  height: auto
+  text-align: center
+  color: white
+  background-size: cover
+  -o-background-size: cover
+.brand_heading
+  font-size: 130px
+  font-family: 'Montserrat', sans-serif
+  font-weight: 700
+  color: #fff
+.rotate
+    &:hover
+    -webkit-transform: rotate(360deg)
+    -moz-transform: rotate(360deg)
+    -o-transform: rotate(360deg)
+    -webkit-transition-duration: 0.8s
+    transition-duration: 0.8s
+    -webkit-transition-property: -webkit-transform
+    transition-property: -webkit-transform
+    transition-property: transform
+    transition-property: transform, -webkit-transform
+    overflow: hidden
+.intro-text
+ font-size: 35px
+ font-family: 'Montserrat', sans-serif
+
+.mouse-warp
+  margin: 40px auto
+  display: block
+  width: 28px
+  opacity: 0.5
+
+.mouse
+  height: 50px
+  border: 2px solid #fff
+  border-radius: 14px
+
+.scroll
+  width: 4px
+  height: 4px
+  border-radius: 2px
+  background: #fff
+  position: relative
+  left: 10px
+  -webkit-animation: scrolls 1.3s ease-out infinite
+
+@-webkit-keyframes scrolls
+  0%
+    top: 8px
+    opacity: 0
+    -webkit-transform: scaleY(1) scaleX(1)
+
+  5%
+    top: 8px
+    opacity: 0.8
+    -webkit-transform: scaleY(1.2) scaleX(1.2)
+
+  10%
+    top: 8px
+    opacity: 1
+    -webkit-transform: scaleY(1.6) scaleX(1.6)
+
+  15%
+    top: 8px
+    opacity: 1
+    -webkit-transform: scaleY(1.2) scaleX(1.2)
+
+  20%
+    top: 8px
+    opacity: 1
+    -webkit-transform: scaleY(1.2) scaleX(1.2)
+
+  30%
+    top: 15px
+    opacity: 1
+    -webkit-transform: scaleY(1.2) scaleX(1.2)
+
+  100%
+    top: 30px
+    opacity: 0
+    -webkit-transform: scaleY(1.2) scaleX(0.8)
+
+// Preloader
+.preloader
+  align-items: center
+  background-color: #fff
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: center
+  height: 100%
+  width: 100%
+  position: fixed
+  z-index: 999
+
+$color-4: #eead68
+$color-3: #eec368
+$color-2: #eece68
+$color-1: #eed968
+$color-5: #ee8c68
+
+$color: $color-1, $color-2, $color-3, $color-4, $color-5
+
+@mixin anim() 
+  @keyframes scale 
+    0% 
+        transform: scale(1)
+    
+    50%,
+    75% 
+      transform: scale(2.5)
+    
+    78%, 100% 
+      opacity: 0
+    
+
+.container 
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  animation-delay: 1s
+  z-index: 99999
+
+
+@for $i from 1 through 5 
+  .item-#{$i} 
+    width: 20px
+    height: 20px
+    background: #f583a1
+    border-radius: 50%
+    @include anim();
+    background-color: nth($color, $i)
+    margin: 7px
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &:before 
+      content: ''
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      background-color: nth($color, $i)
+      opacity: 0.7
+      animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02)
+      animation-delay: 200ms * $i
+      transition: 0.5s all ease
+      transform: scale(1)
+
+.section
+  text-align: center
+#menu li
+  display: inline-block
+  margin: 15px
+  color: #000
+  border-right: 10px
+#menu
+  z-index: 99
+  position: absolute
+  right: 6%
+
+.footer_text
+  color: #fff
+  z-index: 200
+  
+.text_color
+  font-family: 'Montserrat', sans-serif
+  color: #0c2125
+  text-transform: uppercase
+  text-decoration: none
+  position: relative
+  font-size: 15px
+  &::before
+    content: ''
+    bottom: 0
+    right: 0
+    position: absolute
+    width: 0%
+    height: 2px
+    background-color: #000
+    transition: 0.2s
+  &:hover:before
+    width: 100%
+    left: 0
+
+.section
+  text-align: center
+
+#section0 .bg
+  //background-image: (linear-gradient(45deg,  #11998e, #38ef7d))
+  background: #3baa36
+  z-index: 10
+
+#section1 .bg
+  background: #87bfe4
+  z-index: 9
+
+#section2 .bg
+  background: #f5f2de
+  z-index: 8
+
+#section3 .bg
+  background: #2B2B2B
+  z-index: 7
+
+#section4 .bg
+  background: #fff
+  z-index: 6
+
+#section5 .bg
+  background: #fff
+  z-index: 5
+
+#section6 .bg
+  background: #242331
+  z-index: 4
+
+
+.section
+  .bg
+    background: inherit
+    border-radius: 50%
+    position: absolute
+    height: calc(100% - 1%)
+    transform: scaleX(1.3)
+    top: 0
+    left: -15%
+    right: 0
+    width: 130%
+    transition: border-radius 300ms linear 0s
+  &.active .bg
+    transition: border-radius 500ms linear 410ms
+  .bg:after
+    content: ''
+    width: 100%
+    position: absolute
+    top: -50%
+    height: 100%
+    left: 0
+    background: inherit
+
+.remove-circle .bg
+  border-radius: 0 !important
+
+.content
+  z-index: 99
+  position: relative
+    
+
+.fp-viewing-0rdPage .text_color 
+ color: #fff
+ &::before
+   content: ''
+   bottom: 0
+   right: 0
+   position: absolute
+   width: 0%
+   height: 2px
+   background-color: #fff
+   transition: 0.2s
+ &:hover:before
+   width: 100%
+   left: 0
+.fp-viewing-3rdPage .text_color 
+ color: #fff
+ &::before
+   content: ''
+   bottom: 0
+   right: 0
+   position: absolute
+   width: 0%
+   height: 2px
+   background-color: #fff
+   transition: 0.2s
+ &:hover:before
+   width: 100%
+   left: 0
+
+.fp-viewing-5rdPage .bg
+ border-radius: 0% !important
+ height: calc(100% - 0%)
+.fp-viewing-6rdPage .bg
+ border-radius: 0% !important
+ top: 3px !important
+ z-index: -1 !important
+ 
+.fp-viewing-1rdPage .fp-tooltip.fp-right 
+  color: #333 !important
+.fp-viewing-2rdPage .fp-tooltip.fp-right 
+  color: #333 !important
+.fp-viewing-5rdPage .fp-tooltip.fp-right 
+  color: #333 !important
+.fp-viewing-6rdPage .fp-tooltip.fp-right 
+  color: #333 !important
+
+.fp-viewing-0rdPage #fp-nav ul li a span
+  background: #fff !important
+  transition: 0.2s !important
+.fp-viewing-1rdPage #fp-nav ul li a span
+  background: #333 !important
+  transition: 0.2s !important
+.fp-viewing-2rdPage #fp-nav ul li a span
+  background: #333 !important
+  transition: 0.2s !important
+.fp-viewing-3rdPage #fp-nav ul li a span
+  background: #fff !important
+  transition: 0.2s !important
+
+
+
+//
+.fp-viewing-4rdPage-0 .fp-tooltip.fp-right 
+  display: none !important
+.fp-viewing-4rdPage-1 .fp-tooltip.fp-right 
+  display: none !important
+.fp-viewing-4rdPage-2 .fp-tooltip.fp-right 
+  display: none !important
+.fp-viewing-4rdPage-3 .fp-tooltip.fp-right 
+  display: none !important
+.fp-viewing-4rdPage-4 .fp-tooltip.fp-right 
+  display: none !important
+
+
+.fp-controlArrow.fp-prev
+  border-color: transparent #FF6363 transparent transparent !important
+  left: 45px !important
+
+.fp-controlArrow.fp-next
+  border-color: transparent transparent transparent #FF6363 !important
+  right: 45px !important
+
+.fp-tooltip.fp-right
+  font-family: 'Montserrat', sans-serif !important
+  text-transform: uppercase !important
+  font-size: 15px !important
+
+.mail
+  margin-left: auto
+  margin-right: auto
+  max-width: 800px
+.mail_lable
+  color: #484848
+  font-size: 36px
+.mail_text
+ font-size: 20px
+ color: #484848
+.form_group
+  border: 2px solid rgba(0, 0, 0, 0.27)
+  width: 100%
+  max-width: 100%
+  font-size: 16px
+  padding: 1em
+  margin: .5em 0 2em 0
+  font-weight: bold
+.form_field
+  resize: none
+  border: 2px solid rgba(0, 0, 0, 0.27)
+  width: 100%
+  max-width: 100%
+  font-size: 17px
+  padding: 1em
+  margin: .5em 0 2em 0
+  font-weight: bold
+.contact-form
+  margin-left: auto
+  margin-right: auto
+  max-width: 800px
+.submit
+  outline: none
+  padding: 12px
+  min-width: 200px
+  border-radius: 2px
+  border: 2px solid #FF6363
+  text-align: center
+  font-size: 1em
+  color: #FF6363
+  background-color: white
+  text-decoration: none
+  text-transform: uppercase
+  font-weight: bold
+  &::hover
+   content: ''
+   bottom: 0
+   right: 0
+   position: absolute
+   width: 0%
+   height: 2px
+   background: red
+   transition: 0.2s
+
+$text-color-dark: #373737 
+$text-color-light: #ffffff
+$active-color: #FF6363
+$bg-color-light: #f4f4f4
+
+.button
+ font-size: 14px
+ background-color: $active-color
+ border: 1px solid transparent
+ color: $text-color-light
+ padding: 13px 22px
+ border-radius: 5px
+ &:hover
+  background-color: lighten($active-color, 5)
+  cursor: pointer
+ &-o 
+  background-color: transparent
+  color: $text-color-dark  
+  border: 1px solid rgba(#373737, 0.5)
+  &:hover
+   background-color: lighten($active-color, 5)
+   color: $text-color-light
+   border: 1px solid transparent
+   cursor: pointer
+.sab
+ padding-top: 57px
+ padding-bottom: 73px
+ &-block 
+  margin-bottom: 35px
+  text-align: center
+  &__button
+   margin-right: 12px
+
+
+
+.some-form__line-required
+  input
+    &[type="name"], &[type="tel"], &[type="email"]
+      border-color: #f45a57
+  textarea
+    &[type="message"]
+      border-color: #f45a57
+  .some-form__hint
+    opacity: 1
+    z-index: auto
+// .blocks
+//   margin-top: 100px !important
+
+.work_title
+  color: #484848
+  font-size: 36px
+.w_title
+  color: #484848
+  font-size: 36px
+.about_title
+  color: #fff
+  font-size: 36px
+.a_title
+  color: #fff
+  font-size: 36px
+
+.three_columns
+ display: inline-block
+ vertical-align: top
+ text-align: left
+ padding: 0 3em
+.profile-pic
+ position: relative
+ width: 120px
+ height: 120px
+ border-radius: 100%
+.text
+ width: calc(50% - 54px)
+ display: inline-block
+ // background-color: #173549
+ border-radius: 5px 5px 0 0
+ text-align: left
+ margin-right: 54px
+.text0
+ font-size: 20px
+ color: #7A7A7A
+.text1
+ font-size: 25px
+ color: #fff
+.text2
+ font-size: 20px
+ color: #bbb
+
+.contacts
+ display: inline-block
+ vertical-align: top
+ text-align: left
+.button_downloads
+ display: inline-block
+ text-align: left
+ margin-left: 54px
+ margin-top: 90px
+.contact-det
+ color: #fff
+ font-family: 'Montserrat', sans-serif
+
+.load_img
+ float: left
+ margin-top: 6px
+
+.stat
+ color: #7A7A7A
+ margin: 25px
+ display: inline-block
+ text-align: center
+ font-size: 35px
+ font-weight: 700
+ font-family: 'Montserrat', sans-serif
+ text-transform: lowercase
+
+ .fa
+  color: #fff
+  font-size: 50px 
+.stats_img
+  color: #7A7A7A
+  font-size: 14px
+
+.text_block
+  margin-top: 0px
+  text-align: center
+  color: #484848
+  font-size: 30px
+  font-weight: 900

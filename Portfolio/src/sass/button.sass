@@ -1,0 +1,32 @@
+$text-color-dark: #373737 
+$text-color-light: #ffffff
+$active-color: #FF6363
+$bg-color-light: #f4f4f4
+
+.button_download
+ font-size: 14px
+ background-color: $active-color
+ border: 1px solid transparent
+ color: $text-color-light
+ padding: 13px 22px
+ border-radius: 5px
+ &:hover
+  background-color: lighten($active-color, 5)
+  cursor: pointer
+ &-od
+  background-color: #fff
+  color: $text-color-dark  
+  border: 1px solid rgba(#373737, 0.5)
+  &:hover
+   background-color: lighten($active-color, 5)
+   color: $text-color-light
+   border: 1px solid transparent
+   cursor: pointer
+.down
+ padding-top: 57px
+ padding-bottom: 73px
+ &-block 
+  margin-bottom: 35px
+  text-align: center
+  &__button
+   
